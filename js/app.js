@@ -170,6 +170,10 @@ document.getElementById('book-list').addEventListener('click', function (e) {
 
    Storage.removeBookFromLS(e.target.parentElement.parentElement.previousElementSibling.textContent);
 
+   if (Storage.isEmpty()) {
+      new UI().hideTable();
+   }
+
    e.preventDefault();
 });
 
